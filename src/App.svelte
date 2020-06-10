@@ -1,12 +1,6 @@
 <script>
-  import {
-    onMount
-  } from "svelte";
-  import {
-    Router,
-    Link,
-    Route
-  } from "svelte-routing";
+  import { onMount } from "svelte";
+  import { Router,Link,Route} from "svelte-routing";
   import Contacto from "./routes/Contacto.svelte";
   import Cursos from "./routes/Cursos.svelte";
   import Home from "./routes/Home.svelte";
