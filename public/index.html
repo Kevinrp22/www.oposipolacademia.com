@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Svelte app</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+
+	<script defer src='/build/bundle.js'></script>
+
+	<!-- GOOGLE FONTS -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<!-- FONT AWESOME -->
+	<script src="https://kit.fontawesome.com/9d699014b9.js" crossorigin="anonymous"></script>
+	<!-- JQUERY CDN -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+</head>
+<style>
+	:root {
+		--transition: all 0.3s ease;
+		--color-text: rgb(41, 41, 41);
+		--color-title: rgb(22, 22, 22);
+		--bg-secondary: #151619;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		font-family: "Montserrat", sans-serif;
+		/* font-family: 'Poppins', sans-serif; */
+	}
+
+	main {
+    padding-top: 87px;
+  }
+
+  footer {
+    background-color: black;
+  }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Poppins', sans-serif;
+	}
+
+	input,
+	textarea,
+	select {
+		margin: 0;
+	}
+
+	input:focus,
+	textarea:focus,
+	select:focus {
+		border: none;
+		outline: none;
+		outline-offset: 0px !important;
+	}
+
+	span {
+		display: block;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	p {
+		line-height: 20px;
+		color: var(--color-text);
+	}
+
+	a {
+		display: block;
+		color: #000;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+
+	.k-flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.k-grid {
+		max-width: 1500px;
+		margin: 0 auto;
+		padding: 0 20px;
+		transition: padding .5s ease;
+	}
+
+	.k-margin {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.k-padding {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+	.btn {
+		text-transform: uppercase;
+		color: white;
+		background-color: #333;
+		padding: 15px 30px;
+		font-weight: 600;
+		cursor: pointer;
+		border: none;
+		transition: var(--transition);
+	}
+
+	.btn:hover {
+		background-color:#2697d8;
+	}
+
+	.k-title {
+		font-size: 1.7em;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--color-title);
+	}
+
+	.menu__items {
+    color: white;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    transition: var(--transition);
+  }
+  .menu__items:hover {
+    color: #2697d8;
+	}
+	.c-logo .menu__items{
+    padding: 0;
+  }
+
+	@media screen and (min-width: 1000px) {
+	
+
+		body {
+			font-size: 15px;
+		}
+	}
+</style>
+
+<body>
+</body>
+
+</html>
