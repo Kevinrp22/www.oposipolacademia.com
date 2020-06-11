@@ -1,9 +1,12 @@
 <script>
   import { onMount } from "svelte";
-  import { Router,Link,Route} from "svelte-routing";
+
+  import { Router, Link, Route } from "svelte-routing";
   import Contacto from "./routes/Contacto.svelte";
   import Cursos from "./routes/Cursos.svelte";
   import Home from "./routes/Home.svelte";
+
+  import * as animateScroll from "svelte-scrollto";
 
   export let url = "";
 
@@ -17,6 +20,8 @@
       link.addEventListener("click", closeSideBar);
     });
     console.log(links);
+
+    window.scrollTo(0, 0);
   });
 
   const openSideBar = () => {
@@ -26,61 +31,11 @@
     sideEstado = false;
   };
 
-  $: sideEstado ? s_body.overflow = "hidden": s_body.overflow = "initial" 
-  
+  $: {
+    sideEstado ? (s_body.overflow = "hidden") : (s_body.overflow = "initial");
+    window.location.href;
+  }
 </script>
-
-<Router {url}>
-  <header>
-    <nav>
-      <div class="menu">
-        <Link to="/">Home</Link>
-        <Link to="cursos">Cursos</Link>
-        <Link to="contacto">Contacto</Link>
-      </div>
-      <div class="c-logo">
-        <Link to="/">
-        <img class="c-logo__img" src="assets/logo-negro.png" alt="logo-oposipol" />
-        </Link>
-      </div>
-
-      <div class="menu">
-        <Link to="noticias">Noticias</Link>
-        <Link to="remius">
-        Remius
-        <i class="fas fa-sign-in-alt" />
-        </Link>
-
-      </div>
-
-      <div id="barra" on:click={openSideBar}>
-        <i class="fas fa-bars" />
-      </div>
-
-    </nav>
-    <div class="sidebar" class:active={sideEstado==true ? 'active' : '' }>
-      <div class="sidebar_btn" on:click={closeSideBar}>
-        <i class="fas fa-arrow-left" />
-      </div>
-      <div class="sidebar_nav">
-        <Link to="/">Home</Link>
-        <Link to="cursos" class="sidebar_nav__items">Cursos</Link>
-        <Link to="contacto" class="sidebar_nav__items">Contacto</Link>
-        <Link to="noticias" class="sidebar_nav__items">Noticias</Link>
-        <Link to="remius" class="sidebar_nav__items">
-        Remius
-        <i class="fas fa-sign-in-alt" />
-        </Link>
-      </div>
-    </div>
-  </header>
-  <Route path="contacto" component={Contacto} />
-  <Route path="cursos" component={Cursos} />
-  <Route path="/">
-    <Home />
-  </Route>
-</Router>
-
 
 <style>
   header {
@@ -107,7 +62,6 @@
     display: block;
     width: 230px;
   }
-
 
   .menu {
     border-radius: 3px;
@@ -175,7 +129,7 @@
     background-color: #4d4d4d;
   }
 
-  .sidebar_nav__items:hover>i {
+  .sidebar_nav__items:hover > i {
     color: #2697d8;
   }
 
@@ -207,3 +161,57 @@
     }
   }
 </style>
+
+<Router {url}>
+  <header>
+    <nav>
+      <div class="menu">
+        <Link to="/">Home</Link>
+        <Link to="cursos">Cursos</Link>
+
+      </div>
+      <div class="c-logo">
+        <Link to="/">
+          <img
+            class="c-logo__img"
+            src="assets/logo-negro.png"
+            alt="logo-oposipol" />
+        </Link>
+      </div>
+
+      <div class="menu">
+        <Link to="contacto">Contacto</Link>
+        <Link to="noticias">Noticias</Link>
+
+      </div>
+
+      <div id="barra" on:click={openSideBar}>
+        <i class="fas fa-bars" />
+      </div>
+
+    </nav>
+    <div class="sidebar" class:active={sideEstado == true ? 'active' : ''}>
+      <div class="sidebar_btn" on:click={closeSideBar}>
+        <i class="fas fa-arrow-left" />
+      </div>
+      <div class="sidebar_nav">
+        <Link to="/">Home</Link>
+        <Link to="cursos" class="sidebar_nav__items">Cursos</Link>
+        <Link to="contacto" class="sidebar_nav__items">Contacto</Link>
+        <Link to="noticias" class="sidebar_nav__items">Noticias</Link>
+        <Link to="remius" class="sidebar_nav__items">
+          Remius
+          <i class="fas fa-sign-in-alt" />
+        </Link>
+      </div>
+    </div>
+  </header>
+    <button class="btn-scrollTop" on:click={() => animateScroll.scrollToTop()}>
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  <Route path="contacto" component={Contacto} />
+  <Route path="cursos" component={Cursos} />
+  <Route path="/">
+    <Home />
+  </Route>
+</Router>

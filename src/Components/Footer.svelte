@@ -113,78 +113,81 @@
   }
 </style>
 
-<div class="c-footer k-grid k-padding">
-  <div class="footer__1">
-    <div class="footer__1__quienes-somos">
-      <h1 class="footer__1__contacto--title">Quienes somos</h1>
-      <p class="footer__1__contacto--text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        error officiis nemo, illum culpa esse consequuntur. Sapiente, minima
-        qui. Assumenda, explicabo corrupti iste pariatur dolores officiis!
-        Mollitia autem explicabo nam!
-      </p>
-      <img src="assets/logo-blanco-slim.png" alt="" />
+<footer>
+
+  <div class="c-footer k-grid k-padding">
+    <div class="footer__1">
+      <div class="footer__1__quienes-somos">
+        <h1 class="footer__1__contacto--title">Quienes somos</h1>
+        <p class="footer__1__contacto--text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          error officiis nemo, illum culpa esse consequuntur. Sapiente, minima
+          qui. Assumenda, explicabo corrupti iste pariatur dolores officiis!
+          Mollitia autem explicabo nam!
+        </p>
+        <img src="assets/logo-blanco-slim.png" alt="" />
+      </div>
+
+      <div class="footer__1__contacto">
+        <h1 class="footer__1__contacto--title">Contacto</h1>
+        <div class="footer__1__contacto--item">
+          <span>
+            <i class="fas fa-map-marker-alt" />
+          </span>
+          C/ Simó Ballester nº9 BJ, Palma de Mallorca
+        </div>
+        <div class="footer__1__contacto--item">
+          <span>
+            <i class="fas fa-phone-square-alt" />
+          </span>
+          667 634 997
+        </div>
+        <div class="footer__1__contacto--item">
+          <span>
+            <i class="far fa-envelope" />
+          </span>
+          info@academiamanu.com
+        </div>
+      </div>
+    </div>
+    <div class="footer__2 footer-margin">
+      <a href="#/" class="footer__2__item">INICIO</a>
+      |
+      <a href="#/" class="footer__2__item">CURSOS</a>
+      |
+      <a href="#/" class="footer__2__item">CONTACTO</a>
+      |
+      <a href="#/" class="footer__2__item">NOTICIAS</a>
+      |
+      <a href="#/" class="footer__2__item">MOODLE</a>
     </div>
 
-    <div class="footer__1__contacto">
-      <h1 class="footer__1__contacto--title">Contacto</h1>
-      <div class="footer__1__contacto--item">
-        <span>
-          <i class="fas fa-map-marker-alt" />
-        </span>
-        C/ Simó Ballester nº9 BJ, Palma de Mallorca
+    <div class="footer__separador" />
+
+    <div class="footer__4 footer-margin">
+      <div class="footer__4__rrrss footer-margin">
+        <a href="#/" style="color:#4064ad">
+          <i class="fab fa-facebook-f" />
+        </a>
+        <a href="#/" style="color:#1c9deb">
+          <i class="fab fa-twitter" />
+        </a>
+        <a href="#/" style="color:#eb552a">
+          <i class="fab fa-instagram" />
+        </a>
+        <a href="#/" style="color:#f80000">
+          <i class="fab fa-youtube" />
+        </a>
       </div>
-      <div class="footer__1__contacto--item">
-        <span>
-          <i class="fas fa-phone-square-alt" />
-        </span>
-        667 634 997
-      </div>
-      <div class="footer__1__contacto--item">
-        <span>
-          <i class="far fa-envelope" />
-        </span>
-        info@academiamanu.com
+      <div class="footer__4__copy">
+        <img src="assets/logo-negro.png" alt="" class="footer__4__img" />
+        <p>
+          2017 © Copyright Academia Oposipol
+          <br />
+          Todos los derechos reservados
+        </p>
       </div>
     </div>
   </div>
-  <div class="footer__2 footer-margin">
-    <a href="#/" class="footer__2__item">INICIO</a>
-    |
-    <a href="#/" class="footer__2__item">CURSOS</a>
-    |
-    <a href="#/" class="footer__2__item">CONTACTO</a>
-    |
-    <a href="#/" class="footer__2__item">NOTICIAS</a>
-    |
-    <a href="#/" class="footer__2__item">MOODLE</a>
-  </div>
-
-  <div class="footer__separador" />
-
-  <div class="footer__4 footer-margin">
-    <div class="footer__4__rrrss footer-margin">
-      <a href="#/" style="color:#4064ad">
-        <i class="fab fa-facebook-f" />
-      </a>
-      <a href="#/" style="color:#1c9deb">
-        <i class="fab fa-twitter" />
-      </a>
-      <a href="#/" style="color:#eb552a">
-        <i class="fab fa-instagram" />
-      </a>
-      <a href="#/" style="color:#f80000">
-        <i class="fab fa-youtube" />
-      </a>
-    </div>
-    <div class="footer__4__copy">
-      <img src="assets/logo-negro.png" alt="" class="footer__4__img" />
-      <p>
-        2017 © Copyright Academia Oposipol
-        <br />
-        Todos los derechos reservados
-      </p>
-    </div>
-  </div>
-</div>
-l
+  l
+</footer>
