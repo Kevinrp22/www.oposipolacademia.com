@@ -4,9 +4,9 @@
 
   import { onMount } from "svelte";
 
-  onMount(()=>{
+  onMount(() => {
     window.scrollTo(0, 0);
-  })
+  });
 </script>
 
 <style>
@@ -22,6 +22,40 @@
   iframe:hover {
     filter: brightness(0.4);
   }
+  .contacto {
+    flex-direction: column;
+    background-color: #35333f;
+    padding: 15px;
+  }
+  .contacto__info {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1d1d1d;
+    color: white;
+    padding: 20px;
+    flex: 1 50%;
+  }
+  .contacto__info__item--title {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: #0884d6;
+    font-size: 1.1em;
+    margin-bottom: 0px;
+  }
+  .contacto__info__item--text {
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: white;
+  }
+   @media screen and (min-width: 1000px){
+  .contacto {
+      flex-direction: row;
+      align-items: initial;
+      justify-content: initial;
+    }
+   }
 </style>
 
 <main>
@@ -38,9 +72,29 @@
       aria-hidden="false"
       tabindex="0" />
   </section>
-  <section class="contacto k-grid k-margin k-padding">
+  <section class=" k-grid k-margin k-padding">
     <h1 class="k-title">Ponte en contacto con nosotros</h1>
-    <Form />
+
+    <div class="contacto k-flex ">
+      <div class="contacto__info">
+        <div class="contacto__info__item">
+          <p class="contacto__info__item--title">Dirección</p>
+          <p class="contacto__info__item--text">
+            C/ Simó Ballester nº9, BJ, Palma de mallorca
+          </p>
+        </div>
+        <div class="contacto__info__item">
+          <p class="contacto__info__item--title">Teléfono</p>
+          <p class="contacto__info__item--text">667634997</p>
+        </div>
+        <div class="contacto__info__item">
+          <p class="contacto__info__item--title">Correo</p>
+          <p class="contacto__info__item--text">info@academiamanu.com</p>
+        </div>
+      </div>
+      <Form />
+    </div>
+
   </section>
 
 </main>

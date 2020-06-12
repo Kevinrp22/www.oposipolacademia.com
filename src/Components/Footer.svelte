@@ -1,5 +1,5 @@
 <script>
-
+  import { Router, Link, Route } from "svelte-routing";
 </script>
 
 <style>
@@ -37,20 +37,7 @@
     justify-content: space-evenly;
     margin: 2rem 0;
   }
-  .footer__2__item {
-    margin: 0px 5px;
-    color: white;
-    transition: var(--transition);
-  }
-  .footer__2__item:hover {
-    color: #0884d6;
-  }
-  .footer__2__item:last-child {
-    margin-right: 0px;
-  }
-  .footer__2__item:first-child {
-    margin-left: 0px;
-  }
+  
 
   .footer__separador {
     margin: 15px 0px;
@@ -151,15 +138,14 @@
       </div>
     </div>
     <div class="footer__2 footer-margin">
-      <a href="#/" class="footer__2__item">INICIO</a>
+      <Link clase={'footer__2__item'} to="/">Home</Link>
       |
-      <a href="#/" class="footer__2__item">CURSOS</a>
+      <Link clase={'footer__2__item'} to="cursos">Cursos</Link>
       |
-      <a href="#/" class="footer__2__item">CONTACTO</a>
+      <Link clase={'footer__2__item'} to="contacto">Contacto</Link>
       |
-      <a href="#/" class="footer__2__item">NOTICIAS</a>
-      |
-      <a href="#/" class="footer__2__item">MOODLE</a>
+      <Link clase={'footer__2__item'} to="noticias">Noticias</Link>
+      
     </div>
 
     <div class="footer__separador" />

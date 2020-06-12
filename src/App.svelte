@@ -55,7 +55,6 @@
     justify-content: center;
     align-items: center;
     padding: 0px 50px;
-    overflow: hidden;
   }
 
   .c-logo__img {
@@ -104,33 +103,29 @@
     background-color: #2697d8a9;
   }
 
-  .sidebar_nav__items {
-    display: flex;
-    color: #ffffff;
-    background-color: #353535;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 0.9em;
-    padding: 20px;
-    margin: 0.9px 0px;
-    transition: var(--transition);
-  }
-
-  .sidebar_nav__items i {
-    font-size: 0.9rem;
+  .icon-moodle {
+    position: relative;
+    right: -30px;
+    background-color: #2697d8;
     color: white;
-    margin-left: 10px;
-    transition: var(--transition);
+    border-color: 2px solid #2697d8;
+    border-radius: 20px;
+    width: 60px;
+    
+   padding: 10px 20px;
+    transition: var(--transition)
   }
-
-  .sidebar_nav__items:hover {
-    color: #2697d8;
-
-    background-color: #4d4d4d;
+  .icon-moodle h1 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    font-size: 11px;
   }
-
-  .sidebar_nav__items:hover > i {
-    color: #2697d8;
+  .icon-moodle:hover{
+    background-color: #01779e;
+    border: 1px solid white;
   }
 
   .active {
@@ -156,7 +151,7 @@
   }
 
   @media only screen and (min-width: 1000px) {
-    .menu-desplegable {
+    .sidebar {
       display: none !important;
     }
   }
@@ -166,8 +161,8 @@
   <header>
     <nav>
       <div class="menu">
-        <Link to="/">Home</Link>
-        <Link to="cursos">Cursos</Link>
+        <Link clase={'menu__items'} to="/">Inicio</Link>
+        <Link clase={'menu__items'} to="cursos">Cursos</Link>
 
       </div>
       <div class="c-logo">
@@ -180,14 +175,20 @@
       </div>
 
       <div class="menu">
-        <Link to="contacto">Contacto</Link>
-        <Link to="noticias">Noticias</Link>
+        <Link clase={'menu__items'} to="contacto">Contacto</Link>
+        <Link clase={'menu__items'} to="noticias">Noticias</Link>
 
       </div>
+
 
       <div id="barra" on:click={openSideBar}>
         <i class="fas fa-bars" />
       </div>
+      <a href="/">
+        <div class="icon-moodle">
+          <h1>Acceso Alumnos</h1>
+        </div>
+      </a>
 
     </nav>
     <div class="sidebar" class:active={sideEstado == true ? 'active' : ''}>
@@ -195,23 +196,24 @@
         <i class="fas fa-arrow-left" />
       </div>
       <div class="sidebar_nav">
-        <Link to="/">Home</Link>
-        <Link to="cursos" class="sidebar_nav__items">Cursos</Link>
-        <Link to="contacto" class="sidebar_nav__items">Contacto</Link>
-        <Link to="noticias" class="sidebar_nav__items">Noticias</Link>
-        <Link to="remius" class="sidebar_nav__items">
+        <Link to="/" clase={'sidebar_nav__items'}>Inicio</Link>
+        <Link to="cursos" clase={'sidebar_nav__items'}>Cursos</Link>
+        <Link to="contacto" clase={'sidebar_nav__items'}>Contacto</Link>
+        <Link to="noticias" clase={'sidebar_nav__items'}>Noticias</Link>
+        <Link to="remius" clase={'sidebar_nav__items'}>
           Remius
           <i class="fas fa-sign-in-alt" />
         </Link>
       </div>
     </div>
   </header>
-    <button class="btn-scrollTop" on:click={() => animateScroll.scrollToTop()}>
-      <i class="fas fa-chevron-up"></i>
-    </button>
+  <button class="btn-scrollTop" on:click={() => animateScroll.scrollToTop()}>
+    <i class="fas fa-chevron-up" />
+  </button>
   <Route path="contacto" component={Contacto} />
   <Route path="cursos" component={Cursos} />
   <Route path="/">
     <Home />
   </Route>
+
 </Router>
