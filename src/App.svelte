@@ -161,8 +161,8 @@
   <header>
     <nav>
       <div class="menu">
-        <Link clase={menu__items} to="/">Inicio</Link>
-        <Link clase={menu__items} to="cursos">Cursos</Link>
+        <Link to="/">Inicio</Link>
+        <Link to="cursos">Cursos</Link>
 
       </div>
       <div class="c-logo">
@@ -175,8 +175,8 @@
       </div>
 
       <div class="menu">
-        <Link clase={menu__items} to="contacto">Contacto</Link>
-        <Link clase={menu__items} to="noticias">Noticias</Link>
+        <Link to="contacto">Contacto</Link>
+        <Link to="noticias">Noticias</Link>
 
       </div>
 
