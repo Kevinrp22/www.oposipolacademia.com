@@ -12,6 +12,7 @@
 
   let sideEstado = false;
   let s_body = document.body.style;
+  let menu__items = "menu__items";
 
   onMount(() => {
     let links = document.querySelectorAll(".menu__items");
@@ -111,9 +112,9 @@
     border-color: 2px solid #2697d8;
     border-radius: 20px;
     width: 60px;
-    
-   padding: 10px 20px;
-    transition: var(--transition)
+
+    padding: 10px 20px;
+    transition: var(--transition);
   }
   .icon-moodle h1 {
     margin: 0;
@@ -123,7 +124,7 @@
     font-weight: 500;
     font-size: 11px;
   }
-  .icon-moodle:hover{
+  .icon-moodle:hover {
     background-color: #01779e;
     border: 1px solid white;
   }
@@ -161,8 +162,8 @@
   <header>
     <nav>
       <div class="menu">
-        <Link clase={'menu__items'} to="/">Inicio</Link>
-        <Link clase={'menu__items'} to="cursos">Cursos</Link>
+        <Link clase={menu__items} to="/">Inicio</Link>
+        <Link clase={menu__items} to="cursos">Cursos</Link>
 
       </div>
       <div class="c-logo">
@@ -175,11 +176,10 @@
       </div>
 
       <div class="menu">
-        <Link clase={'menu__items'} to="contacto">Contacto</Link>
-        <Link clase={'menu__items'} to="noticias">Noticias</Link>
+        <Link clase={menu__items} to="contacto">Contacto</Link>
+        <Link clase={menu__items} to="noticias">Noticias</Link>
 
       </div>
-
 
       <div id="barra" on:click={openSideBar}>
         <i class="fas fa-bars" />
