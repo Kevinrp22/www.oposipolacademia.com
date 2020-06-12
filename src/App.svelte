@@ -15,7 +15,7 @@
   let menu__items = "menu__items";
 
   onMount(() => {
-    let links = document.querySelectorAll(".menu__items");
+    let links = document.querySelectorAll(".sidebar_nav__items");
     links.forEach(link => {
       console.log(link);
       link.addEventListener("click", closeSideBar);
@@ -34,7 +34,6 @@
 
   $: {
     sideEstado ? (s_body.overflow = "hidden") : (s_body.overflow = "initial");
-    window.location.href;
   }
 </script>
 
