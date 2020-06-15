@@ -161,7 +161,7 @@
   <header>
     <nav>
       <div class="menu">
-        <Link to="/">Inicio</Link>
+        <Link to="/">Inici</Link>
         <Link to="cursos">Cursos</Link>
 
       </div>
