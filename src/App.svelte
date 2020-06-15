@@ -161,8 +161,12 @@
   <header>
     <nav>
       <div class="menu">
-        <Link to="/">Inici</Link>
-        <Link to="cursos">Cursos</Link>
+        <div class="menu__items">
+          <Link to="/">Inicio</Link>
+        </div>
+        <div class="menu__items">
+          <Link to="cursos">Cursos</Link>
+        </div>
 
       </div>
       <div class="c-logo">
@@ -175,8 +179,12 @@
       </div>
 
       <div class="menu">
-        <Link to="contacto">Contacto</Link>
-        <Link to="noticias">Noticias</Link>
+        <div class="menu__items">
+          <Link to="contacto">Contacto</Link>
+        </div>
+        <div class="menu__items">
+          <Link to="noticias">Noticias</Link>
+        </div>
 
       </div>
 
