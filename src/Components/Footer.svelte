@@ -3,8 +3,9 @@
 </script>
 
 <style>
-  .footer-margin {
-  }
+img{
+  border-radius: 3px;
+}
   .c-footer {
     color: white;
     font-size: 0.9em;

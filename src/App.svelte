@@ -5,17 +5,20 @@
   import Contacto from "./routes/Contacto.svelte";
   import Cursos from "./routes/Cursos.svelte";
   import Home from "./routes/Home.svelte";
+  import Noticias from "./routes/Noticias.svelte";
 
   import * as animateScroll from "svelte-scrollto";
 
   export let url = "";
-
+  let active = false;
   let sideEstado = false;
   let s_body = document.body.style;
-  let menu__items = "menu__items";
 
   onMount(() => {
     let links = document.querySelectorAll(".sidebar_nav__items");
+    let sidebar = document.querySelector(".sidebar");
+    let barra = document.querySelector(".btn-barra");
+
     links.forEach(link => {
       console.log(link);
       link.addEventListener("click", closeSideBar);
@@ -23,26 +26,41 @@
     console.log(links);
 
     window.scrollTo(0, 0);
+
+    window.addEventListener("click", e => {
+      console.log(e.target);
+      if (e.target != barra && e.target != sidebar) {
+        closeSideBar();
+      }
+    });
   });
 
-  const openSideBar = () => {
-    sideEstado = true;
+  const toggleSideBar = () => {
+    sideEstado = !sideEstado;
   };
   const closeSideBar = () => {
     sideEstado = false;
   };
-
-  $: {
-    sideEstado ? (s_body.overflow = "hidden") : (s_body.overflow = "initial");
-  }
 </script>
 
 <style>
   header {
     position: fixed;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     width: 100%;
+    top: 0;
     background-color: black;
     z-index: 1111;
+    min-height: 80px;
+  }
+  .contenedor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
   }
 
   a {
@@ -54,12 +72,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 50px;
   }
 
   .c-logo__img {
     display: block;
-    width: 230px;
+    max-width: 230px;
   }
 
   .menu {
@@ -76,62 +93,53 @@
 
   .sidebar {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 80px;
+    left: 0;
+    background-color: rgb(0, 0, 0);
     display: flex;
     width: 100%;
-    height: 100vh;
     flex-direction: column;
-    background-color: black;
     transition: var(--transition);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  .sidebar_btn {
-    background-color: #353535;
-  }
-
-  .sidebar_btn i {
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px;
-    color: rgb(53, 53, 53);
-    background-color: #2697d8;
-  }
-
-  .sidebar_btn i:hover {
-    background-color: #2697d8a9;
+    padding: 15px 0px;
+    transform: translate3d(-500%, 0, 0);
   }
 
   .icon-moodle {
-    position: relative;
-    right: -30px;
-    background-color: #2697d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    border-color: 2px solid #2697d8;
-    border-radius: 20px;
-    width: 60px;
+    background-color: #2697d8;
+    border: 2px solid #dfdfdf;
+    border-radius: 30px;
 
-    padding: 10px 20px;
+    padding: 15px 20px;
     transition: var(--transition);
   }
-  .icon-moodle h1 {
-    margin: 0;
+  .icon-moodle span {
+    margin-left:10px;
     text-transform: uppercase;
     text-align: center;
-    margin: 0;
     font-weight: 500;
-    font-size: 11px;
+    font-size: 0.8em;
   }
   .icon-moodle:hover {
-    background-color: #01779e;
-    border: 1px solid white;
+    background-color: #caa339;
   }
 
   .active {
     transform: translate3d(0%, 0, 0);
   }
-
+  @media screen and (max-width: 500px) {
+    .icon-moodle {
+      padding: 10px;
+      font-size: 0.8em
+    }
+    
+    .c-logo__img {
+      max-width: 160px;
+    }
+  }
   @media only screen and (max-width: 1000px) {
     #barra i {
       display: block;
@@ -145,9 +153,7 @@
       justify-content: space-between;
     }
 
-    .c-logo__img {
-      width: 200px;
-    }
+    
   }
 
   @media only screen and (min-width: 1000px) {
@@ -159,58 +165,72 @@
 
 <Router {url}>
   <header>
-    <nav>
-      <div class="menu">
-        <div class="menu__items">
-          <Link to="/">Inicio</Link>
-        </div>
-        <div class="menu__items">
-          <Link to="cursos">Cursos</Link>
-        </div>
+    <div class="contenedor-header k-grid">
 
+      <div id="barra">
+        <i class="fas fa-bars btn-barra" on:click={toggleSideBar} />
       </div>
-      <div class="c-logo">
-        <Link to="/">
-          <img
-            class="c-logo__img"
-            src="assets/logo-negro.png"
-            alt="logo-oposipol" />
-        </Link>
-      </div>
+      <nav>
+        <div class="menu">
+          <div class="menu__items">
+            <Link to="/">Inicio</Link>
+          </div>
+          <div class="menu__items">
+            <Link to="cursos">Cursos</Link>
+          </div>
 
-      <div class="menu">
-        <div class="menu__items">
-          <Link to="contacto">Contacto</Link>
         </div>
-        <div class="menu__items">
-          <Link to="noticias">Noticias</Link>
+        <div class="c-logo">
+          <Link to="/">
+            <img
+              class="c-logo__img"
+              src="assets/logo-negro.png"
+              alt="logo-oposipol" />
+          </Link>
         </div>
 
-      </div>
+        <div class="menu">
+          <div class="menu__items">
+            <Link to="contacto">Contacto</Link>
+          </div>
+          <div class="menu__items">
+            <Link to="noticias">Noticias</Link>
+          </div>
 
-      <div id="barra" on:click={openSideBar}>
-        <i class="fas fa-bars" />
-      </div>
-      <a href="/">
+        </div>
+
+      </nav>
+      <a
+        href="http://pruebas.oposipolacademia.com/moodle-kevin/moodle/login/index.php">
         <div class="icon-moodle">
-          <h1>Acceso Alumnos</h1>
+          <i class="fas fa-user-graduate"></i>
+          <span>Acceso Alumnos</span>
         </div>
       </a>
-
-    </nav>
-    <div class="sidebar" class:active={sideEstado == true ? 'active' : ''}>
-      <div class="sidebar_btn" on:click={closeSideBar}>
+      <div class="sidebar" class:active={sideEstado}>
+        <!-- <div class="sidebar_btn" on:click={closeSideBar}>
         <i class="fas fa-arrow-left" />
-      </div>
-      <div class="sidebar_nav">
-        <Link to="/" clase={'sidebar_nav__items'}>Inicio</Link>
-        <Link to="cursos" clase={'sidebar_nav__items'}>Cursos</Link>
-        <Link to="contacto" clase={'sidebar_nav__items'}>Contacto</Link>
-        <Link to="noticias" clase={'sidebar_nav__items'}>Noticias</Link>
-        <Link to="remius" clase={'sidebar_nav__items'}>
-          Remius
-          <i class="fas fa-sign-in-alt" />
-        </Link>
+      </div> -->
+        <div class="sidebar_nav">
+          <div class="sidebar_nav_items">
+            <Link to="/">Inicio</Link>
+          </div>
+          <div class="sidebar_nav_items">
+            <Link to="cursos">Cursos</Link>
+          </div>
+          <div class="sidebar_nav_items">
+            <Link to="contacto">Contacto</Link>
+          </div>
+          <div class="sidebar_nav_items">
+            <Link to="noticias">Noticias</Link>
+          </div>
+          <div class="sidebar_nav_items">
+            <Link to="remius">
+              Acceso alumnos
+              <i class="fas fa-sign-in-alt" />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -218,6 +238,7 @@
     <i class="fas fa-chevron-up" />
   </button>
   <Route path="contacto" component={Contacto} />
+  <Route path="noticias" component={Noticias} />
   <Route path="cursos" component={Cursos} />
   <Route path="/">
     <Home />

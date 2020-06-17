@@ -14,6 +14,9 @@
 </script>
 
 <style>
+img {
+   border-radius: 3px;
+}
   /* SECTION BIENVENIDA */
   .s-bienvenida {
     position: relative;
@@ -36,6 +39,7 @@
     text-transform: uppercase;
     font-weight: 600;
     font-size: 2.5em;
+    padding:0 10px ;
   }
   .bienvenida_subtitulo {
     text-transform: uppercase;
@@ -52,8 +56,6 @@
   }
 
   /* SECTION SVGS */
-  .s-svg {
-  }
   .c-svg {
     display: grid;
     justify-content: space-evenly;
@@ -111,8 +113,6 @@
   }
 
   /* SECTION BLOG */
-  .blog-bg {
-  }
   .c-blog-cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -150,10 +150,6 @@
   .blog-card__content--title:hover {
     color: #0884d6;
   }
-  .blog-card__content--title span {
-    display: initial;
-    font-weight: 300;
-  }
   .blog-card__content--text {
     font-size: 0.8em;
   }
@@ -161,6 +157,8 @@
     display: flex;
   }
   .blog-card__content--widgets > .btn {
+    letter-spacing: 0px;
+    min-width: 10px;
     margin: 0;
     font-size: 0.8em;
     padding: 2px;
@@ -210,6 +208,7 @@
   .insta_title {
     display: flex;
     align-items: center;
+    margin: 10px 0;
   }
   .insta-title__icon {
     margin-right: 5px;
@@ -218,6 +217,9 @@
     border-radius: 30px;
     padding: 10px 15px;
     color: white;
+  }
+  .insta-title__text{
+    font-size: 1.2em;
   }
   .galeria-insta__item {
     width: 100%;
@@ -258,47 +260,7 @@
     color: white;
   }
 
-  .form-bienvenida {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
-    background-color: #ffffff;
-  }
-  .form-bienvenida input {
-    padding: 18px 1px 18px 40px;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-  .form-bienvenida textarea {
-    padding: 15px;
-    width: 100%;
-    font-size: 0.8rem;
-    height: 150px;
-    resize: none;
-  }
-  .c-inputs {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5px 15px;
-  }
-  .grupo {
-    position: relative;
-  }
-  .grupo span i {
-    color: #888888;
-  }
-  .grupo span {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15px;
-  }
-  .form-bienvenida .btn {
-    margin-top: 0.5rem;
-    width: 100%;
-  }
+  
   @media screen and (min-width: 768px) {
     .c-svg {
       grid-template-columns: repeat(3, minmax(100px, 400px));
@@ -308,6 +270,9 @@
     }
     .galeria-insta {
       grid-template-columns: repeat(3, 1fr);
+    }
+    .insta-title__text{
+      font-size: 1.5em;
     }
   }
   @media screen and (min-width: 1000px) {

@@ -11,6 +11,7 @@
     font-size: 0.8rem;
   }
   .form-bienvenida textarea {
+    box-sizing: border-box;
     padding: 15px;
     width: 100%;
     font-size: 0.8rem;
@@ -39,6 +40,21 @@
   .form-bienvenida .btn {
     margin-top: 0.5rem;
     width: 100%;
+  }
+
+  input,
+  button,
+  textarea {
+    color: black;
+    letter-spacing: 0px;
+    font-family: "Monserrat", sans-serif;
+    text-transform: initial;
+    font-family: inherit;
+    font-size: 0.9em;
+    padding: 0.4em;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 1px;
   }
 </style>
 
