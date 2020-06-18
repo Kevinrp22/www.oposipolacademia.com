@@ -176,5 +176,5 @@ img{
       </div>
     </div>
   </div>
-  l
+  
 </footer>

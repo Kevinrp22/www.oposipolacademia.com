@@ -43,7 +43,6 @@
   }
 
   input,
-  button,
   textarea {
     color: black;
     letter-spacing: 0px;

@@ -117,11 +117,13 @@
   }
   .filter {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #ffffff;
     margin: 10px 0;
     padding: 20px;
   }
+
   .busqueda {
     position: relative;
   }
@@ -134,7 +136,7 @@
     display: flex;
     align-items: center;
   }
-  .ordenar span{
+  .ordenar span {
     margin-right: 10px;
   }
 
@@ -150,14 +152,14 @@
   .c-blog-cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 10px;
     padding: 30px;
   }
   .blog-card {
     min-width: 100px;
     padding: 10px;
     align-content: flex-start;
-    background-color: #f3f3f3e3;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.18);
     border-bottom: 1px solid rgb(248, 248, 248);
     border-radius: 4px;
     transition: var(--transition);
@@ -166,7 +168,7 @@
     height: 100%;
   }
   .blog-card:hover {
-    background-color: #bdbdbd;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.38);
   }
   .blog-card__img {
     width: 100%;
@@ -242,6 +244,7 @@
     background-color: white;
     max-width: 280px;
     margin-bottom: 20px;
+    width: 100%;
   }
   .blog-sidebar__item__title {
     font-size: 1.5em;
@@ -249,7 +252,46 @@
     text-align: center;
     width: 100%;
   }
-
+  .blog-sidebar__item__title__rrrss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog-sidebar__item__title__rrrss a {
+    font-size: 1.3em;
+    padding: 10px 15px;
+    margin: 5px;
+    transition: font 0.1s ease;
+  }
+  .blog-sidebar__item__title__rrrss a:hover i {
+    color: #3c3950;
+  }
+  .blog-sidebar__item__fechas--item{
+    color: black;
+    padding: 10px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+  .blog-sidebar__item__fechas--item:nth-child(2n-1){
+    background-color: #b2b3b438;
+  }
+  .blog-sidebar__item__fechas--item:hover{
+    background-color: #e6e6e670;
+    color: #51b9ff;
+  }
+  @media screen and (max-width: 500px) {
+    .filter input,
+    select {
+      width: 100%;
+    }
+    .filter > .busqueda,
+    .ordenar {
+      margin-bottom: 5px;
+      width: 100%;
+    }
+  }
   @media screen and (max-width: 768px) {
     .ordenar span {
       display: none;
@@ -361,6 +403,65 @@
               allow="accelerometer; autoplay; encrypted-media; gyroscope;
               picture-in-picture"
               allowfullscreen />
+          </div>
+          <div class="blog-sidebar__item">
+            <h1 class="blog-sidebar__item__title">Redes sociales</h1>
+
+            <div class="blog-sidebar__item__title__rrrss">
+              <a href="#/" style="color:#4064ad">
+                <i class="fab fa-facebook-f" />
+              </a>
+              <a href="#/" style="color:#1c9deb">
+                <i class="fab fa-twitter" />
+              </a>
+              <a href="#/" style="color:#eb552a">
+                <i class="fab fa-instagram" />
+              </a>
+              <a href="#/" style="color:#f80000">
+                <i class="fab fa-youtube" />
+              </a>
+            </div>
+          </div>
+          <div class="blog-sidebar__item">
+            <h1 class="blog-sidebar__item__title">Archivos</h1>
+            <div class="blog-sidebar__item__fechas">
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2020/01/">
+                enero 2020
+              </a>
+
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2019/04/">
+                abril 2019
+              </a>
+
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2019/03/">
+                marzo 2019
+              </a>
+
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2019/02/">
+                febrero 2019
+              </a>
+
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2018/11/">
+                noviembre 2018
+              </a>
+
+              <a
+                class="blog-sidebar__item__fechas--item"
+                href="http://www.academiamanu.com/2018/10/">
+                octubre 2018
+              </a>
+
+            </div>
           </div>
         </div>
       </div>
